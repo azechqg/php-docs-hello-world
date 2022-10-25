@@ -1,7 +1,7 @@
 <?php
 
-echo "Hello World!"; 
-echo $_SERVER['HTTP_CLIENT_IP']; 
-echo $_SERVER['HTTP_X_FORWARDED_FOR']; 
-echo $_SERVER['REMOTE_ADDR'];
+echo "Hello World!";
+echo "<br> Client IP is: " . $_SERVER['HTTP_CLIENT_IP'];
+echo "<br> Forwarded For is: " . $_SERVER['HTTP_X_FORWARDED_FOR'];
+echo "<br> Remote ADDR is: " . $_SERVER['REMOTE_ADDR'];
 ?> 
