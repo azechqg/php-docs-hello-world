@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'GISSecOpsDev1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C892C1BE7D441CA8E5EAA6D4C019762 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_288F1EDCD56941879B06FDD0C4DEDC24 }}
           package: .
