@@ -1,34 +1,21 @@
 <?php
 
 echo "Hello World! ";
-function getUserIP()
-{
-    // Get real visitor IP behind CloudFlare network
-    if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
-              $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
-              $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
-    }
-    $client  = @$_SERVER['HTTP_CLIENT_IP'];
-    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-    $remote  = $_SERVER['REMOTE_ADDR'];
-
-    if(filter_var($client, FILTER_VALIDATE_IP))
-    {
-        $ip = $client;
-    }
-    elseif(filter_var($forward, FILTER_VALIDATE_IP))
-    {
-        $ip = $forward;
-    }
-    else
-    {
-        $ip = $remote;
-    }
-
-    return $ip;
-}
-
-
-$user_ip = getUserIP();
-
-echo $user_ip; // Output IP address [Ex: 177.87.193.134]
+    function getIPAddress() {  
+    //whether ip is from the share internet  
+     if(!emptyempty($_SERVER['HTTP_CLIENT_IP'])) {  
+                $ip = $_SERVER['HTTP_CLIENT_IP'];  
+        }  
+    //whether ip is from the proxy  
+    elseif (!emptyempty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+     }  
+//whether ip is from the remote address  
+    else{  
+             $ip = $_SERVER['REMOTE_ADDR'];  
+     }  
+     return $ip;  
+}  
+$ip = getIPAddress();  
+echo 'User Real IP Address - '.$ip;  
+?> 
