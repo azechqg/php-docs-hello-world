@@ -17,5 +17,5 @@ echo "Hello World! ";
      return $ip;  
 }  
 $ip = getIPAddress();  
-echo 'User Real IP Address - '.$ip;  
+echo "User Real IP Address - ".$ip;  
 ?> 
