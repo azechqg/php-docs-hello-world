@@ -1,6 +1,6 @@
 <?php
 
-echo "Hello World! ";
+echo "Hello World!";
 function getIPAddress() {  
     //whether ip is from the share internet  
      if(!emptyempty($_SERVER['HTTP_CLIENT_IP'])) {  
@@ -18,3 +18,4 @@ function getIPAddress() {
 }  
 $ip = getIPAddress();  
 echo 'User Real IP Address - '.$ip;  
+echo "this is a test";
